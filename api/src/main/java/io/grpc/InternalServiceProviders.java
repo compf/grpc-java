@@ -28,14 +28,14 @@ public final class InternalServiceProviders {
    * Accessor for method.
    */
   public static <T> T load(LoadArgs<T> args) {
-    return ServiceProviders.load(args.klass, args.hardcoded, args.classLoader, args.priorityAccessor);
+    return ServiceProviders.load(args);
   }
 
   /**
    * Accessor for method.
    */
   public static <T> List<T> loadAll(LoadArgs<T> args) {
-    return ServiceProviders.loadAll(args.klass, args.hardcoded, args.classLoader, args.priorityAccessor);
+    return ServiceProviders.loadAll(args);
   }
 
   /**

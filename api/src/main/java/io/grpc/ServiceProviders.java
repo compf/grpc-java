@@ -35,7 +35,7 @@ final class ServiceProviders {
    * If this is Android, returns an instance of the highest priority class in {@code hardcoded}.
    */
   public static <T> T load(LoadArgs<T> args) {
-    List<T> candidates = loadAll(args.klass, args.hardcoded, args.classLoader, args.priorityAccessor);
+    List<T> candidates = loadAll(args);
     if (candidates.isEmpty()) {
       return null;
     }
@@ -49,7 +49,6 @@ final class ServiceProviders {
    * The list is sorted in descending priority order.
    */
   public static <T> List<T> loadAll(LoadArgs<T> args) {
-    Iterable<T> candidates;
     Iterable<T> candidates = isAndroid(args.classLoader)
         ? getCandidatesViaHardCoded(args.klass, args.hardcoded)
         : getCandidatesViaServiceLoader(args.klass, args.classLoader);
