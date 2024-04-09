@@ -1,0 +1,115 @@
+*** Skipping the build of codegen and compilation of proto files because skipCodegen=true
+  * Skipping the build of Android projects because skipAndroid=true
+> Task :buildSrc:compileJava UP-TO-DATE
+> Task :buildSrc:compileGroovy NO-SOURCE
+> Task :buildSrc:processResources NO-SOURCE
+> Task :buildSrc:classes UP-TO-DATE
+> Task :buildSrc:jar UP-TO-DATE
+> Task :compileJava NO-SOURCE
+> Task :processResources NO-SOURCE
+> Task :classes UP-TO-DATE
+> Task :jar UP-TO-DATE
+> Task :assemble UP-TO-DATE
+> Task :compileTestJava NO-SOURCE
+> Task :processTestResources NO-SOURCE
+> Task :testClasses UP-TO-DATE
+> Task :test NO-SOURCE
+> Task :check UP-TO-DATE
+> Task :build UP-TO-DATE
+> Task :grpc-all:checkUpperBoundDeps UP-TO-DATE
+> Task :grpc-api:compileContextJava UP-TO-DATE
+> Task :grpc-api:processContextResources NO-SOURCE
+> Task :grpc-api:contextClasses UP-TO-DATE
+
+> Task :grpc-api:compileJava FAILED
+/home/compf/data/uni/master/sem4/github_projects/grpc-java/api/src/main/java/io/grpc/NameResolverRegistry.java:126: error: method loadAll in class ServiceProviders cannot be applied to given types;
+      List<NameResolverProvider> providerList = ServiceProviders.loadAll(
+                                                                ^
+  required: LoadArgs<T>
+  found:    Class<NameResolverProvider>,List<Class<?>>,ClassLoader,NameResolverPriorityAccessor
+  reason: cannot infer type-variable(s) T
+    (actual and formal argument lists differ in length)
+  where T is a type-variable:
+    T extends Object declared in method <T>loadAll(LoadArgs<T>)
+/home/compf/data/uni/master/sem4/github_projects/grpc-java/api/src/main/java/io/grpc/InternalServiceProviders.java:31: error: method load in class ServiceProviders cannot be applied to given types;
+    return ServiceProviders.load(args.klass, args.hardcoded, args.classLoader, args.priorityAccessor);
+                           ^
+  required: LoadArgs<T#1>
+  found:    Class<T#2>,Iterable<Class<?>>,ClassLoader,PriorityAccessor<T#2>
+  reason: cannot infer type-variable(s) T#1
+    (actual and formal argument lists differ in length)
+  where T#1,T#2 are type-variables:
+    T#1 extends Object declared in method <T#1>load(LoadArgs<T#1>)
+    T#2 extends Object declared in method <T#2>load(LoadArgs<T#2>)
+/home/compf/data/uni/master/sem4/github_projects/grpc-java/api/src/main/java/io/grpc/InternalServiceProviders.java:38: error: method loadAll in class ServiceProviders cannot be applied to given types;
+    return ServiceProviders.loadAll(args.klass, args.hardcoded, args.classLoader, args.priorityAccessor);
+                           ^
+  required: LoadArgs<T#1>
+  found:    Class<T#2>,Iterable<Class<?>>,ClassLoader,PriorityAccessor<T#2>
+  reason: cannot infer type-variable(s) T#1
+    (actual and formal argument lists differ in length)
+  where T#1,T#2 are type-variables:
+    T#1 extends Object declared in method <T#1>loadAll(LoadArgs<T#1>)
+    T#2 extends Object declared in method <T#2>loadAll(LoadArgs<T#2>)
+/home/compf/data/uni/master/sem4/github_projects/grpc-java/api/src/main/java/io/grpc/ServiceProviders.java:38: error: method loadAll in class ServiceProviders cannot be applied to given types;
+    List<T> candidates = loadAll(args.klass, args.hardcoded, args.classLoader, args.priorityAccessor);
+                         ^
+  required: LoadArgs<T#1>
+  found:    Class<T#2>,Iterable<Class<?>>,ClassLoader,PriorityAccessor<T#2>
+  reason: cannot infer type-variable(s) T#1
+    (actual and formal argument lists differ in length)
+  where T#1,T#2 are type-variables:
+    T#1 extends Object declared in method <T#1>loadAll(LoadArgs<T#1>)
+    T#2 extends Object declared in method <T#2>load(LoadArgs<T#2>)
+/home/compf/data/uni/master/sem4/github_projects/grpc-java/api/src/main/java/io/grpc/ServiceProviders.java:53: error: variable candidates is already defined in method <T>loadAll(LoadArgs<T>)
+    Iterable<T> candidates = isAndroid(args.classLoader)
+                ^
+  where T is a type-variable:
+    T extends Object declared in method <T>loadAll(LoadArgs<T>)
+/home/compf/data/uni/master/sem4/github_projects/grpc-java/api/src/main/java/io/grpc/ManagedChannelRegistry.java:101: error: method loadAll in class ServiceProviders cannot be applied to given types;
+      List<ManagedChannelProvider> providerList = ServiceProviders.loadAll(
+                                                                  ^
+  required: LoadArgs<T>
+  found:    Class<ManagedChannelProvider>,List<Class<?>>,ClassLoader,ManagedChannelPriorityAccessor
+  reason: cannot infer type-variable(s) T
+    (actual and formal argument lists differ in length)
+  where T is a type-variable:
+    T extends Object declared in method <T>loadAll(LoadArgs<T>)
+/home/compf/data/uni/master/sem4/github_projects/grpc-java/api/src/main/java/io/grpc/ServerRegistry.java:94: error: method loadAll in class ServiceProviders cannot be applied to given types;
+      List<ServerProvider> providerList = ServiceProviders.loadAll(
+                                                          ^
+  required: LoadArgs<T>
+  found:    Class<ServerProvider>,List<Class<?>>,ClassLoader,ServerPriorityAccessor
+  reason: cannot infer type-variable(s) T
+    (actual and formal argument lists differ in length)
+  where T is a type-variable:
+    T extends Object declared in method <T>loadAll(LoadArgs<T>)
+/home/compf/data/uni/master/sem4/github_projects/grpc-java/api/src/main/java/io/grpc/LoadBalancerRegistry.java:102: error: method loadAll in class ServiceProviders cannot be applied to given types;
+      List<LoadBalancerProvider> providerList = ServiceProviders.loadAll(
+                                                                ^
+  required: LoadArgs<T>
+  found:    Class<LoadBalancerProvider>,Iterable<Class<?>>,ClassLoader,LoadBalancerPriorityAccessor
+  reason: cannot infer type-variable(s) T
+    (actual and formal argument lists differ in length)
+  where T is a type-variable:
+    T extends Object declared in method <T>loadAll(LoadArgs<T>)
+8 errors
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':grpc-api:compileJava'.
+> Compilation failed; see the compiler error output for details.
+
+* Try:
+> Run with --info option to get more log output.
+> Run with --scan to get full insights.
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.5/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD FAILED in 1s
+6 actionable tasks: 1 executed, 5 up-to-date
